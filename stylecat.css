@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'Garet';
+    src: url('fontes/Garet-Book.otf');
+}
+
+@font-face {
+    font-family: 'lemon1';
+    src: url('fontes/LEMONMILK-Bold.otf');
+}
+
+@font-face {
+    font-family: 'lemon2';
+    src: url('fontes/LEMONMILK-Light.otf');
+}
+
+@font-face {
+    font-family: 'lemon3';
+    src: url('fontes/LEMONMILK-Medium.otf');
+}
+
+@font-face {
+    font-family: 'lemon4';
+    src: url('fontes/LEMONMILK-Regular.otf');
+}
+
+:root {
+    --color-bg-body: #f7f7f7; /* background */
+    --color-text-primary: #4d4d4d; /* Textos principais. "bar" */
+    --color-text-secondary: #a1a1a1; /* Textos secundarios. "Bar "*/
+    --color-bg-header: #212529; /* Navegação top */
+    --color-bg-header-hover: #333333; /* Navegação superior hover */
+    --color-bg-sidebar: #e9ecef; /* Nav lateral */
+    --color-bg-sidebar-link: rgba(131, 131, 131, 0.199); /* Cor Ancora lateral  */
+    --color-bg-sidebar-link-hover: #252525; /* Ancora lateral hover */
+    --color-text-sidebar-link-hover: rgb(223, 223, 223); /* Texto ancora lateral hover */
+    --color-bg-content: rgba(223, 205, 205, 0.521); /* Conteudo principal */
+    --color-bg-grid-item: #ffffff; /* Box de cada conteudo */
+    --color-border-grid-item: #000000; /* Borda do conteudo */
+    --color-shadow-grid-item-hover: rgba(0, 0, 2, 0.329); /* sombra box conteudo */
+    --color-primary: #ff6b6b; /* Vermelho vibrante */
+    --color-secondary: #3498db; /* Azul intenso */
+    --color-accent: #f1c40f; /* Amarelo brilhante */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg-body);
+    font-family: lemon3;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#logolink {
+    text-decoration: none;
+    color: var(--color-accent);
+    font-family: Garet;
+    margin-left: 10px;
+}
+
+.head {
+    background-color: var(--color-bg-header);
+    color: var(--color-text-primary);
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.head p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.head p > span {
+    font-size: 25px;
+    font-family: lemon3;
+}
+
+.head p > a {
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-family: lemon2;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.head p > a:hover {
+    background-color: var(--color-bg-header-hover);
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    font-size: 1.1em;
+    padding: 5px 10px 5px 10px;
+}
+
+.bar {
+    background-color: var(--color-bg-sidebar);
+    width: 150px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.bar a {
+    background-color: var(--color-bg-sidebar-link);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-family: lemon2;
+    font-weight: bold;
+    padding: 10px;
+    margin: 5px 0;
+    transition: background-color 0.2s, padding 0.2s, text-decoration 0.2s;
+}
+
+.bar a:hover {
+    background-color: var(--color-bg-sidebar-link-hover);
+    color: var(--color-text-sidebar-link-hover);
+    padding-left: 20px;
+    text-decoration: underline;
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+.content {
+    flex: 1;
+    background-color: var(--color-bg-content);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px 0px 160px; /* Espaço para a barra lateral */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.grid-item {
+    background-color: var(--color-bg-grid-item);
+    border: 1px solid var(--color-border-grid-item);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.grid-item:hover {
+    transition: 0.2s;
+    box-shadow: 3px 6px 8px var(--color-shadow-grid-item-hover);
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.322);
+}
+
+.grid-item a {
+    color: black;
+    font-family: lemon3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.content > h1 {
+    margin-bottom: 20px;
+    text-decoration: underline;
+    color: black;
+}
+
+#preco{
+    font-family: lemon2;
+    text-decoration: underline;
+}
